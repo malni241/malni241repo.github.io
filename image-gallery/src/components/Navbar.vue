@@ -40,6 +40,7 @@
                     {icon: 'star', text: 'Top Images', route: '/topimages'},
                     {icon: 'fiber_new', text: 'New Images', route: '/newimages'},
                     {icon: 'library_add', text: 'Add Image', route: '/addimage'},
+                    {icon: 'accessibility', text: 'Users', route: '/users'},
                     {icon: 'sentiment_satisfied_alt', text: 'Playground', route: '/playground'},
                     {icon: 'help', text: 'Help', route: '/help'}
                 ]

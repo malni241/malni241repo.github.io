@@ -1,6 +1,6 @@
 <template>
  <div class="AddImage">
-   <h1>'Add new Image</h1>
+   <h1>Add new Image</h1>
 
 
 
