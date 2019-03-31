@@ -13,8 +13,17 @@
             </v-btn>
         </v-toolbar>
 
-        <v-navigation-drawer app v-model="drawer"  class="indigo">
-            <p>test</p>
+        <v-navigation-drawer app v-model="drawer"  class="primary">
+            <v-list>
+                <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
+                    <v-list-tile-action>
+                        <v-icon class="white--text">{{link.icon}}</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title class="white--text">{{link.text}}</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
         </v-navigation-drawer>
 
     </nav>
@@ -25,7 +34,15 @@
     export default {
         data(){
             return{
-                drawer: false
+                drawer: false,
+                links: [
+                    {icon: 'dashboard', text: 'Dashboard', route: '/'},
+                    {icon: 'star', text: 'Top Images', route: '/topimages'},
+                    {icon: 'fiber_new', text: 'New Images', route: '/newimages'},
+                    {icon: 'library_add', text: 'Add Image', route: '/addimage'},
+                    {icon: 'sentiment_satisfied_alt', text: 'Playground', route: '/playground'},
+                    {icon: 'help', text: 'Help', route: '/help'}
+                ]
             }
         }
     }

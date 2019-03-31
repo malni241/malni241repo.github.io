@@ -1,8 +1,8 @@
 <template>
- <div class="home">
-   <h1>Homepage</h1>
+ <div class="Dashboard">
+   <h1>Dashboard</h1>
 
-   
+
 
  </div>
 </template>

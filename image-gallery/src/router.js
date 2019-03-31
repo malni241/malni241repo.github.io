@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Dashboard from './views/Dashboard.vue'
 import Playground from './views/Playground.vue'
+import NewImages from './views/NewImages.vue'
+import TopImages from './views/TopImages.vue'
+import Help from './views/Help.vue'
+import AddImage from './views/AddImage.vue'
 
 Vue.use(Router)
 
@@ -11,12 +15,32 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'dashboard',
+      component: Dashboard
     },  {
       path: '/playground',
       name: 'playground',
       component: Playground
+    },
+    {
+      path: '/newimages',
+      name: 'newimages',
+      component: NewImages
+    },
+    {
+      path: '/topimages',
+      name: 'TopImages',
+      component: TopImages
+    },
+    {
+      path: '/help',
+      name: 'Help',
+      component: Help
+    },
+    {
+      path: '/addimage',
+      name: 'AddImage',
+      component: AddImage
     },
     {
       path: '/about',
