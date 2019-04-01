@@ -17,7 +17,7 @@
             <v-card-actions>
               <v-btn-flat color="grey">
                 <v-icon small left>message</v-icon>
-                <span>MESSAGE</span>
+                <span>CONTACT</span>
               </v-btn-flat>
             </v-card-actions>
           </v-card>
