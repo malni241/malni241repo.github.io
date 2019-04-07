@@ -58,7 +58,9 @@ export default {
 
           // to make name unique.
           let dateNow = new Date();
+          let nameOfImage = this.imageName;
           this.imageName = this.imageName + dateNow.getTime();
+
 
           let storeRef = firebase.storage().ref('Images/' + this.imageName );
 
@@ -68,7 +70,7 @@ export default {
           task.on('state_changed',
 
                   function progress(snapshot) {
-                    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     console.log('uploaded ' + percentage + '%');
                   },
                   function error(err) {
@@ -78,17 +80,22 @@ export default {
                   function complete() {
                     console.log("COMPLETED!");
                     //alert("COMPLETED!");
-                    // What happens when the upload is complete? Go back to the startpage?
+                    // What happens when the upload is complete? Go back to the startpage
 
                     storeRef.getDownloadURL().then(function(urlToImage) {
                         let imageToFirestore = {
                           url: urlToImage,
                           upload: new Date(),
-                          ranking: 0
+                          rating: 0,
+                          numberOfRatings: 0,
+                          title: nameOfImage
                         };
 
                         db.add(imageToFirestore).then(function () {
                           console.log('URL sent to database, document created');
+
+                          alert('Picture uploaded!');
+
                         });
                     });
                   }
