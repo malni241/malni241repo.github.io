@@ -24,6 +24,11 @@
 </template>
 
 <script>
+  import firebase from 'firebase/app'
+  import 'firebase/storage'
+  import 'firebase/firestore'
+
+  import db from '@/fb'
 export default {
   data: () => ({
     title: "Image Upload",
@@ -50,6 +55,54 @@ export default {
         fr.addEventListener("load", () => {
           this.imageUrl = fr.result;
           this.imageFile = files[0]; // this is an image file that can be sent to server...
+
+          // to make name unique.
+          let dateNow = new Date();
+          let nameOfImage = this.imageName;
+          this.imageName = this.imageName + dateNow.getTime();
+
+
+          let storeRef = firebase.storage().ref('Images/' + this.imageName );
+
+          let task = storeRef.put(this.imageFile);
+
+          //update progress bar
+          task.on('state_changed',
+
+                  function progress(snapshot) {
+                    let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log('uploaded ' + percentage + '%');
+                  },
+                  function error(err) {
+                    // What happens if something went wrong?
+                    console.log('Something went wrong ' + err);
+                  },
+                  function complete() {
+                    console.log("COMPLETED!");
+                    //alert("COMPLETED!");
+                    // What happens when the upload is complete? Go back to the startpage
+
+                    storeRef.getDownloadURL().then(function(urlToImage) {
+                        let imageToFirestore = {
+                          url: urlToImage,
+                          upload: new Date(),
+                          rating: 0,
+                          numberOfRatings: 0,
+                          title: nameOfImage
+                        };
+
+                        db.add(imageToFirestore).then(function () {
+                          console.log('URL sent to database, document created');
+
+                          alert('Picture uploaded!');
+
+                        });
+                    });
+                  }
+          );
+
+
+
         });
       } else {
         this.imageName = "";
