@@ -4,7 +4,7 @@ import 'firebase/storage'
 import 'firebase/auth'
 
 // Initialize Firebase
-var config = {
+let config = {
     apiKey: "AIzaSyCc80p7vl4AXw9XhveYt_8jG81wQIL5iIY",
     authDomain: "image-gallery-51b40.firebaseapp.com",
     databaseURL: "https://image-gallery-51b40.firebaseio.com",

@@ -6,7 +6,9 @@ import NewImages from "./views/NewImages.vue";
 import TopImages from "./views/TopImages.vue";
 import Help from "./views/Help.vue";
 import AddImage from "./views/AddImage.vue";
-import Users from "./views/Users.vue"
+import Users from "./views/Users.vue";
+import SignIn from "./views/SignIn.vue";
+import SignUp from "./views/SignUp";
 
 Vue.use(Router);
 
@@ -16,6 +18,11 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "SignIn",
+      component: SignIn
+    },
+    {
+      path: "/dashboard",
       name: "dashboard",
       component: Dashboard
     },
@@ -57,6 +64,11 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    },
+    {
+      path: "/signup",
+      name: "SignUp",
+      component: SignUp
     }
   ]
 });
