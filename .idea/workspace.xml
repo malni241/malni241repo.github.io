@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f7f48c2-f166-40f5-8e06-78fca090c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/image-gallery/src/views/SignIn.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-gallery/src/views/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-gallery/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-gallery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-gallery/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/src/components/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-gallery/src/fb.js" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/src/fb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-gallery/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-gallery/src/views/TopImages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/image-gallery/src/views/TopImages.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/im531_project/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,19 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image-gallery/src/App.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image-gallery/src/views/AddImage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+            <state relative-caret-position="272">
+              <caret line="103" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="103" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-container#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#655#690#0" expanded="true" />
@@ -48,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image-gallery/src/fb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="197">
+              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -60,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image-gallery/src/views/SignIn.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="714">
               <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
               <folding>
                 <element signature="e#779#814#0" expanded="true" />
@@ -89,8 +73,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/image-gallery/src/views/TopImages.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
-              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+            <state relative-caret-position="-554">
+              <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+              <folding>
+                <element signature="e#1582#1617#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image-gallery/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image-gallery/src/views/Users.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -152,6 +150,7 @@
         <option value="$PROJECT_DIR$/image-gallery/src/views/SignIn.vue" />
         <option value="$PROJECT_DIR$/image-gallery/src/views/SignUp.vue" />
         <option value="$PROJECT_DIR$/image-gallery/src/components/Navbar.vue" />
+        <option value="$PROJECT_DIR$/image-gallery/src/views/TopImages.vue" />
       </list>
     </option>
   </component>
@@ -250,12 +249,12 @@
       <workItem from="1554203046606" duration="220000" />
       <workItem from="1554203405470" duration="6790000" />
       <workItem from="1554213222532" duration="8505000" />
-      <workItem from="1554550658777" duration="27960000" />
+      <workItem from="1554550658777" duration="31063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43475000" />
+    <option name="totallyTimeSpent" value="46578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,15 +334,6 @@
     <entry file="file://$PROJECT_DIR$/image-gallery/src/views/Playground.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/image-gallery/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image-gallery/src/views/NewImages.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -389,37 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/AddImage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-container#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#655#690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image-gallery/src/fb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/SignIn.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
-          <folding>
-            <element signature="e#779#814#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image-gallery/src/components/Navbar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -427,13 +386,6 @@
           <folding>
             <element signature="e#1221#1256#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/Users.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -451,10 +403,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/SignIn.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
+          <folding>
+            <element signature="e#779#814#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-gallery/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-gallery/src/fb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/AddImage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="103" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="103" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-container#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#655#690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-gallery/src/views/Users.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image-gallery/src/views/TopImages.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        <state relative-caret-position="-554">
+          <caret line="56" column="6" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+          <folding>
+            <element signature="e#1582#1617#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

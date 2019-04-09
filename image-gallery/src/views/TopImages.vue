@@ -47,7 +47,11 @@
 </template>
 
 <script>
+    import firebase from 'firebase/app'
+    import 'firebase/firestore'
+    import db from '@/fb'
 export default {
+
   data() {
     return {
       images: [
@@ -76,6 +80,21 @@ export default {
           dateOfSubmition: "06.02.2019"
         }
       ]
+
+        /*images: db.get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.id, " => ", doc.data());
+                title: doc.title
+                src: doc.url
+                rating: doc.rating
+                numberOfRatings: doc.numberOfRatings
+                dateOfSubmition: doc.upload
+
+
+            });
+        })*/
+
     };
   },
   methods: {
