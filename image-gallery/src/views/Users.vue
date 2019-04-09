@@ -15,7 +15,7 @@
               <div class="grey--text">E-Mail: {{user.email}}</div>
             </v-car-text>
             <v-card-actions>
-              <v-btn-flat color="grey">
+              <v-btn-flat color="grey" @click="contactUser">
                 <v-icon small left>message</v-icon>
                 <span>CONTACT</span>
               </v-btn-flat>
@@ -67,6 +67,11 @@ export default {
         { name: "Peter", role: "Web dev", registrationDate: "02.03.2018" }
       ]
     };
+  },
+  methods: {
+    contactUser(){
+      window.location = "mailto:?body=Your content&subject=Mail Subject";
+    }
   }
 };
 </script>
