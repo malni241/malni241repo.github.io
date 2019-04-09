@@ -27,10 +27,8 @@
         >Sign In</v-btn>
 
 
-
-        <v-btn outline
+        <v-btn to="/signup" outline
                color="teal"
-               @click="SignUpUser('SignUp')"
         >Sign Up</v-btn>
     </div>
 </template>
@@ -77,12 +75,6 @@
                 });
 
             },
-            SignUpUser(changeView) {
-                console.log("now to view SignUp.vue");
-
-                // REDIRECT TO SIGN UP
-
-            }
 
         }
     }

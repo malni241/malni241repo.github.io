@@ -7,7 +7,7 @@
                 <span>Gallery</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn flat color="grey" v-if="isUserLogIn" id="signOutBtn" @click="signout">
+            <v-btn to="/signin" flat color="grey" v-if="isUserLogIn" id="signOutBtn" @click="signout">
                 <span>Sign Out</span>
                 <v-icon right>exit_to_app</v-icon>
             </v-btn>
