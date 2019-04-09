@@ -7,7 +7,7 @@
                 <span>Gallery</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn flat color="grey">
+            <v-btn to="/signin" flat color="grey" v-if="isUserLogIn" id="signOutBtn" @click="signout">
                 <span>Sign Out</span>
                 <v-icon right>exit_to_app</v-icon>
             </v-btn>
@@ -31,12 +31,16 @@
 
 
 <script>
+    import firebase from 'firebase/app'
+    import 'firebase/auth'
+
     export default {
         data(){
+
             return{
                 drawer: false,
                 links: [
-                    {icon: 'dashboard', text: 'Dashboard', route: '/'},
+                    {icon: 'dashboard', text: 'Dashboard', route: '/dashboard'},
                     {icon: 'star', text: 'Top Images', route: '/topimages'},
                     {icon: 'fiber_new', text: 'New Images', route: '/newimages'},
                     {icon: 'library_add', text: 'Add Image', route: '/addimage'},
@@ -45,6 +49,32 @@
                     {icon: 'help', text: 'Help', route: '/help'}
                 ]
             }
+        },
+        methods: {
+            signout() {
+                firebase.auth().signOut().then(function () {
+                    // Sign-out successful.
+                    console.log("Signed out!!");
+                }).catch(function (error) {
+                    // An error happened.
+                    console.log("Something went wrong:" + error.messages);
+                });
+
+
+            },
+            isUserLogIn(){
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        // User is signed in.
+                        return true;
+                    } else {
+                        // No user is signed in.
+                        return false;
+                    }
+                });
+            }
         }
-    }
+    };
+
+
 </script>
