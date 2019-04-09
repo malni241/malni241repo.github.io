@@ -10,7 +10,7 @@
             by rating
           </span>
         </v-btn>
-        <v-btn small flat color="grey" @click="sortBy('dateOfSubmition')">
+        <v-btn small flat color="grey" @click="sortBy('dateOfSubmission')">
           <v-icon left small>date_range</v-icon>
           <span class ="caption text-lowercase">
             by submition date
@@ -27,7 +27,7 @@
               <div>
                 <div class="headline">{{image.title}}</div>
                 <div class="black--text">{{image.description}}</div>
-                <div class="grey--text">Date of submission: {{image.dateOfSubmition}}</div>
+                <div class="grey--text">Date of submission: {{image.dateOfSubmission}}</div>
               </div>
             </v-card-title>
           
@@ -47,14 +47,47 @@
 </template>
 
 <script>
-    import firebase from 'firebase/app'
+
     import 'firebase/firestore'
     import db from '@/fb'
+
+    let img = [];
+
+    db.collection('images').get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+              // doc.data() is never undefined for query doc snapshots
+              //      console.log(doc.id, " => ", doc.data());
+
+              console.log('title = ' + doc.data().title);
+
+              let im = {
+                title: doc.data().title,
+                src: doc.data().url,
+                rating: doc.data().rating,
+                numberOfRatings: doc.data().numberOfRatings,
+                dateOfSubmission: doc.data().upload
+              };
+
+        img.push(im);
+      });
+
+
+    });
+
+
+
 export default {
+
+  /*firebase: {
+    images: img
+  },*/
 
   data() {
     return {
-      images: [
+      images: img
+
+
+      /*images: [
         {
           title: "Pre-fab homes",
           description: "description daf df asd fa ds ",
@@ -79,7 +112,7 @@ export default {
           numberOfRatings: 23,
           dateOfSubmition: "06.02.2019"
         }
-      ]
+      ]*/
 
         /*images: db.get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
