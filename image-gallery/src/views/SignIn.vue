@@ -36,6 +36,7 @@
 <script>
     import firebase from 'firebase/app'
     import 'firebase/auth'
+    import router from '../router'
 
     export default {
         name: "SignIn",
@@ -47,6 +48,16 @@
                 let password = document.getElementById('pswrd').value;
 
 
+                firebase.auth().signInWithEmailAndPassword(email, password).then(
+                    (user) => {
+                        router.replace('topimages');
+                    },
+                    (err) => {
+                        alert('Ooops' + err.message)
+                    }
+                )
+
+                /*
                 firebase.auth().signInWithEmailAndPassword(email, password).catch(function (err) {
 
                     // If an error occur
@@ -61,16 +72,18 @@
                         alert(msgOfError);
                     }
                     console.log(err);
-                });
+                });*/
 
                 console.log("Successful log in!");
                 firebase.auth().onAuthStateChanged(function(user) {
                     if (user) {
                         // User is signed in.
                         document.getElementById('signOutBtn').disable = false;
+                        this.$routher.replace('topimages');
                     } else {
                         // No user is signed in.
                         document.getElementById('signOutBtn').disable = true;
+                        this.$router.replace('login');
                     }
                 });
 

@@ -50,6 +50,7 @@
 <script>
     import firebase from "firebase/app"
     import "firebase/auth"
+    import router from '../router'
 
     export default {
         methods: {
@@ -69,13 +70,15 @@
                     user.updateProfile({
                         displayName: name,
                         title: title
-                    }).then(function() {
-                        // Update successful.
-                        console.log("Success! ");
-                    }).catch(function(error) {
+                    }).then(
+                        // success                        
+                        router.replace('topimages')                    
+                    ).catch(function(error) {
                         // An error happened.
                         console.log(error.message);
                     });
+            
+
                 }).catch(function(error) {
                     let errorCode = error.code;
                     let errorMessage = error.message;
