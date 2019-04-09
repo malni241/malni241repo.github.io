@@ -12,7 +12,7 @@ Vue.use(VueInitialsImg);  // image avatar for users
 Vue.use(router)
 
 
-new Vue({
+var vue = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
