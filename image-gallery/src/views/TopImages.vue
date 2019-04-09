@@ -53,7 +53,10 @@
 
     let img = [];
 
-    db.collection('images').get().then(function(querySnapshot) {
+    db.onSnapshot(function(querySnapshot) {
+
+      img = [];
+
             querySnapshot.forEach(function(doc) {
               // doc.data() is never undefined for query doc snapshots
               //      console.log(doc.id, " => ", doc.data());

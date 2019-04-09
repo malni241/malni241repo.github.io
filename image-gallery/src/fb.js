@@ -14,6 +14,6 @@ let config = {
 };
 firebase.initializeApp(config);
 
-const db = firebase.firestore()
+const db = firebase.firestore().collection('images');
 
 export default db;
