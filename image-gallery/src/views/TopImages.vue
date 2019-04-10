@@ -4,24 +4,20 @@
 
     <v-container class="my-5">
       <v-layout row class="mb-3">
-         <v-btn small flat color="grey" @click="sortBy('rating')">
+        <v-btn small flat color="grey" @click="sortBy('rating')">
           <v-icon left small>star</v-icon>
-          <span class ="caption text-lowercase">
-            by rating
-          </span>
+          <span class="caption text-lowercase">by rating</span>
         </v-btn>
         <v-btn small flat color="grey" @click="sortBy('dateOfSubmission')">
           <v-icon left small>date_range</v-icon>
-          <span class ="caption text-lowercase">
-            by submition date
-          </span>
+          <span class="caption text-lowercase">by submition date</span>
         </v-btn>
       </v-layout>
 
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 lg3 v-for="image in images" :key="image.title">
           <v-card class="text-xs-center ma-3">
-            <v-img :src="image.src" height="200px"></v-img>
+            <v-img :src="image.src" height="200px" v-on="on"></v-img>
 
             <v-card-title primary-title>
               <div>
@@ -30,15 +26,22 @@
                 <div class="grey--text">Date of submission: {{image.dateOfSubmission}}</div>
               </div>
             </v-card-title>
-          
 
             <v-rating v-model="rating">{{image.rating}}</v-rating>
-            <span class="black--text text--lighten-2 caption mr-2">(#Ratings: {{ image.numberOfRatings }})</span>
+            <span
+              class="black--text text--lighten-2 caption mr-2"
+            >(#Ratings: {{ image.numberOfRatings }})</span>
 
             <v-card-actions>
-              <v-btn flat>Share</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
+            <div class="hello">
+              <facebook :url="image.src" scale="3"></facebook>
+              <twitter :url="image.src" title="image.title" scale="3"></twitter>
+              <whats-app :url="image.src" title="image.title" scale="3"></whats-app>
+              <pinterest :url="image.src" scale="3"></pinterest>
+              <email :url="image.src" subject="image.title" scale="3"></email>
+            </div>
           </v-card>
         </v-flex>
       </v-layout>
@@ -47,48 +50,54 @@
 </template>
 
 <script>
+import {
+  Facebook,
+  Twitter,
+  Pinterest,
+  WhatsApp,
+  Email
+} from "vue-socialmedia-share";
+import "firebase/firestore";
+import db from "@/fb";
 
-    import 'firebase/firestore'
-    import db from '@/fb'
+let img = [];
 
-    let img = [];
+db.onSnapshot(function(querySnapshot) {
+  img = [];
 
-    db.onSnapshot(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    // doc.data() is never undefined for query doc snapshots
+    //      console.log(doc.id, " => ", doc.data());
 
-      img = [];
+    console.log("title = " + doc.data().title);
 
-            querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              //      console.log(doc.id, " => ", doc.data());
+    let im = {
+      title: doc.data().title,
+      src: doc.data().url,
+      rating: doc.data().rating,
+      numberOfRatings: doc.data().numberOfRatings,
+      dateOfSubmission: doc.data().upload
+    };
 
-              console.log('title = ' + doc.data().title);
-
-              let im = {
-                title: doc.data().title,
-                src: doc.data().url,
-                rating: doc.data().rating,
-                numberOfRatings: doc.data().numberOfRatings,
-                dateOfSubmission: doc.data().upload
-              };
-
-        img.push(im);
-      });
-
-
-    });
-
-
+    img.push(im);
+  });
+});
 
 export default {
-
   /*firebase: {
     images: img
   },*/
-
+  name: "HelloWorld",
+  components: {
+    Facebook,
+    Twitter,
+    Pinterest,
+    WhatsApp,
+    Email
+  },
   data() {
     return {
       images: img
-
 
       /*images: [
         {
@@ -117,7 +126,7 @@ export default {
         }
       ]*/
 
-        /*images: db.get().then(function(querySnapshot) {
+      /*images: db.get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
@@ -130,12 +139,11 @@ export default {
 
             });
         })*/
-
     };
   },
   methods: {
-    sortBy(prop){
-      this.images.sort((a,b) => a[prop] < b[prop] ? -1:1)
+    sortBy(prop) {
+      this.images.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
     }
   }
 };

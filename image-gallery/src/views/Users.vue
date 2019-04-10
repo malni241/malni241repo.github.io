@@ -15,10 +15,10 @@
               <div class="grey--text">E-Mail: {{user.email}}</div>
             </v-car-text>
             <v-card-actions>
-              <v-btn-flat color="grey" @click="contactUser">
+              <v-btn flat  @click="contactUser(user.email)">
                 <v-icon small left>message</v-icon>
                 <span>CONTACT</span>
-              </v-btn-flat>
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -69,8 +69,8 @@ export default {
     };
   },
   methods: {
-    contactUser(){
-      window.location = "mailto:?body=Your content&subject=Mail Subject";
+    contactUser(email){
+      window.open("mailto:" + email +"?");
     }
   }
 };
