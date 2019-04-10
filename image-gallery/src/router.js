@@ -8,8 +8,8 @@ import Help from "./views/Help.vue";
 import AddImage from "./views/AddImage.vue";
 import Users from "./views/Users.vue";
 import SignIn from "./views/SignIn.vue";
-import SignUp from "./views/SignUp";
-import firebase from 'firebase'
+import SignUp from "./views/SignUp.vue";
+import firebase from 'firebase';
 
 Vue.use(Router);
 

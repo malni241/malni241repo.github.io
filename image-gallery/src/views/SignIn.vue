@@ -79,7 +79,7 @@
                     if (user) {
                         // User is signed in.
                         document.getElementById('signOutBtn').disable = false;
-                        this.$routher.replace('topimages');
+                        this.$router.replace('topimages');
                     } else {
                         // No user is signed in.
                         document.getElementById('signOutBtn').disable = true;
