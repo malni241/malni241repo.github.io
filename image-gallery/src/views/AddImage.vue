@@ -181,7 +181,9 @@ export default {
                 user: nameOfUser
             };
 
-            db.add(imageToFirestore).then(function () {
+            let docName = imgTitle + nameOfUser;
+
+            db.doc(docName).set(imageToFirestore).then(function () {
                 alert('Picture uploaded!');
             });
         }
