@@ -147,7 +147,8 @@ export default {
 
       var ref = db.doc(image.title + image.user);
       return ref.update({
-          "numberOfRatings": 100
+          "numberOfRatings": image.numberOfRatings+1,
+          "rating" : image.rating + value
       }).then(function(){
         console.log("updated data");
       }).catch(function(error){
