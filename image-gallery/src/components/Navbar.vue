@@ -18,10 +18,10 @@
         <v-flex class="mt-5" >
           <v-card flat class="text-xs-center ma-3">
             <v-responsive class="pt-4">
-              <vue-initials-img :name="username"/>
+              <vue-initials-img :name="getUserName()"/>
             </v-responsive>
             <v-car-text>
-              <div class="subheading">username</div>
+              <div class="subheading">{{getUserName()}}</div>
             </v-car-text>
             <v-card-actions>
             </v-card-actions>
@@ -93,6 +93,12 @@ export default {
 
         }
       });
+    },
+    getUserName(){
+      let user = firebase.auth().currentUser;
+      if(user != null){
+        return user.displayName;
+      }
     }
   }
 };
