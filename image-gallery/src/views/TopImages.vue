@@ -96,9 +96,10 @@ db.onSnapshot(function(querySnapshot) {
     // doc.data() is never undefined for query doc snapshots
     //      console.log(doc.id, " => ", doc.data());
 
-    console.log("title = " + doc.data().title);
+    console.log("user = " + doc.data().user);
 
     let im = {
+      user: doc.data().user,
       title: doc.data().title,
       src: doc.data().url,
       rating: doc.data().rating,
@@ -142,8 +143,15 @@ export default {
       //image.rating = image.rating + value;
       // image.numberOfRatings = "10";
        console.log("new rating: " + image.numberOfRatings);
-      db.add(image).then(function() {
-        console.log("saved new rating in db");
+
+
+      var ref = db.doc(image.title + image.user);
+      return ref.update({
+          "numberOfRatings": 100
+      }).then(function(){
+        console.log("updated data");
+      }).catch(function(error){
+        console.error("Error updating document: ", error);
       })
 
     }
