@@ -8,13 +8,16 @@ import Vuetify from './plugins/vuetify'
 
 
 Vue.config.productionTip = false
+Vue.prototype.username = "username"
 Vue.use(VueInitialsImg);  // image avatar for users
 Vue.use(router)
+var SocialSharing = require('vue-social-sharing');
 
+Vue.use(SocialSharing);
 
-new Vue({
+var vue = new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')
 
 Vue.use(Vuetify);
