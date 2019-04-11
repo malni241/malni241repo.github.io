@@ -53,8 +53,8 @@
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions class="justify-space-between">
-                  <v-btn flat>No Thanks</v-btn>
-                  <v-btn color="primary" flat @click="saveRating(rating, image.title)">Rate Now</v-btn>
+                  <v-btn flat >No Thanks</v-btn>
+                  <v-btn color="primary" flat @click="saveRating(rating, image)">Rate Now</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -136,8 +136,16 @@ export default {
     setNewRating: function() {
       console.log("new value: ");
     },
-    saveRating(value, name) {
-      console.log("new rating: " + value + " for image " + name);
+    saveRating(value, image) {
+      console.log("new rating: " + value + " for image " + image.title + " ... saving in db");
+      console.log("old rating: " + image.numberOfRatings);
+      //image.rating = image.rating + value;
+      // image.numberOfRatings = "10";
+       console.log("new rating: " + image.numberOfRatings);
+      db.add(image).then(function() {
+        console.log("saved new rating in db");
+      })
+
     }
   }
 };
