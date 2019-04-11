@@ -9,12 +9,17 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "firebase": "^5.9.3",
     "vue": "^2.6.6",
     "vue-initials-img": "^1.0.4",
     "vue-router": "^3.0.1",
+    "vue-social-sharing": "^2.4.3",
+    "vue-socialmedia-share": "^1.0.1",
+    "vue-star-rating": "^1.6.1",
     "vuetify": "^1.5.5"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
