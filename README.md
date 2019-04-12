@@ -27,8 +27,8 @@ We tried for a very long time, using differnt approches, to get this to work but
 - Dialog box
 When pressing the rate-button in the dialog window it does not close. We have done everything that is said in the documentation of vuetify but it sill will not close when clicking the button. 
 
-Deployment: 
-
+- Deployment: 
+We tried to deploy our webpage to the Netify but got the error code 127. 
 
 
 
