@@ -1,6 +1,5 @@
 <template>
     <div class="SignIn">
-        <p>Hello! </p>
 
 
         <v-flex xs8 sm6 md3>
@@ -24,11 +23,13 @@
         <v-btn outline
                color="teal"
                @click="SignInFunction"
+               id="signInBtn"
         >Sign In</v-btn>
 
 
         <v-btn to="/signup" outline
                color="teal"
+               id="signUpBtn"
         >Sign Up</v-btn>
     </div>
 </template>
@@ -42,7 +43,6 @@
         name: "SignIn",
         methods: {
             SignInFunction() {
-                console.log("hej!");
 
                 let email = document.getElementById('emailAddress').value;
                 let password = document.getElementById('pswrd').value;
@@ -53,9 +53,9 @@
                         router.replace('topimages');
                     },
                     (err) => {
-                        alert('Ooops' + err.message)
+                        alert('Ooops ' + err.message)
                     }
-                )
+                );
 
                 /*
                 firebase.auth().signInWithEmailAndPassword(email, password).catch(function (err) {

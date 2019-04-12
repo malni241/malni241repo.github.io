@@ -31,6 +31,8 @@
 import firebase from "firebase/app"
 import 'firebase/firestore'
 import 'firebase/storage'
+import '@/fb'
+
 
     let users = [];
 
@@ -40,7 +42,7 @@ import 'firebase/storage'
       users = [];
 
       querySnapshot.forEach(function(doc) {
-              
+
         let u = {
           name: doc.data().name,
           title: doc.data().title,
@@ -53,7 +55,12 @@ import 'firebase/storage'
 
     });
 
+/* *****************************
 
+   Run unit test: uncomment
+
+***************************** */
+// module.exports = users;
 
 export default {
   data() {
@@ -72,6 +79,6 @@ export default {
     contactUser(email){
       window.open("mailto:" + email +"?");
     }
-  }
+  },
 };
 </script>

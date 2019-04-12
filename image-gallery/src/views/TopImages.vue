@@ -86,6 +86,7 @@ import {
 } from "vue-socialmedia-share";
 import "firebase/firestore";
 import db from "@/fb";
+import "@/fb";
 
 let img = [];
 
@@ -111,6 +112,12 @@ db.onSnapshot(function(querySnapshot) {
     img.push(im);
   });
 });
+/* *****************************
+
+   Run unit test: uncomment
+
+***************************** */
+//module.exports = img;
 
 export default {
   /*firebase: {
