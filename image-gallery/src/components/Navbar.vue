@@ -67,6 +67,7 @@ export default {
     };
   },
   methods: {
+    name: "Navbar",
     signout() {
       firebase
         .auth()

@@ -4,10 +4,6 @@
 
     <v-container class="my-5">
       <v-layout row class="mb-3">
-        <v-btn small flat color="grey" @click="sortBy('overallRating')">
-          <v-icon left small>star</v-icon>
-          <span class="caption text-lowercase">by rating</span>
-        </v-btn>
         <v-btn small flat color="grey" @click="sortBy('dateOfSubmission')">
           <v-icon left small>date_range</v-icon>
           <span class="caption text-lowercase">by submition date</span>
@@ -22,7 +18,7 @@
             <v-card-title primary-title>
               <div>
                 <div class="headline">{{image.title}}</div>
-                <div class="black--text">{{image.description}}</div>
+                <div class="black--text">{{image.caption}}</div>
                 <div class="grey--text">Date of submission: {{image.dateOfSubmission}}</div>
               </div>
             </v-card-title>
@@ -53,7 +49,7 @@
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions class="justify-space-between">
-                  <v-btn flat >No Thanks</v-btn>
+                  <v-btn flat="flat" @click="dialog = false">No Thanks</v-btn>
                   <v-btn color="primary" flat @click="saveRating(rating, image)">Rate Now</v-btn>
                 </v-card-actions>
               </v-card>
@@ -99,6 +95,7 @@ db.onSnapshot(function(querySnapshot) {
     console.log("user = " + doc.data().user);
 
     let im = {
+      caption: doc.data().caption,
       user: doc.data().user,
       title: doc.data().title,
       src: doc.data().url,
@@ -134,17 +131,7 @@ export default {
       this.images.sort((a, b) => (a[prop] > b[prop] ? -1 : 1));
       console.log("sorting");
     },
-    setNewRating: function() {
-      console.log("new value: ");
-    },
     saveRating(value, image) {
-      console.log("new rating: " + value + " for image " + image.title + " ... saving in db");
-      console.log("old rating: " + image.numberOfRatings);
-      //image.rating = image.rating + value;
-      // image.numberOfRatings = "10";
-       console.log("new rating: " + image.numberOfRatings);
-
-
       var ref = db.doc(image.title + image.user);
       return ref.update({
           "numberOfRatings": image.numberOfRatings+1,
