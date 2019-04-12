@@ -51,7 +51,8 @@
   import firebase from 'firebase/app';
   import 'firebase/storage';
   import 'firebase/firestore';
-  import db from '@/fb'
+  import db from '@/fb';
+  import '@/fb';
 
 
   let imgURL;
@@ -136,6 +137,12 @@ export default {
         if (user != null) {
             nameOfUser = user.displayName;
         }
+        /* *****************************
+
+             Run unit test: uncomment
+
+        ***************************** */
+        //module.exports = nameOfUser;
 
         let imgTitle = document.getElementById('titleImage').value;
         let imgCap = document.getElementById('captionImage').value;
@@ -185,6 +192,13 @@ export default {
 
             db.doc(docName).set(imageToFirestore).then(function () {
                 alert('Picture uploaded!');
+
+                /* *****************************
+
+                    Run unit test: uncomment
+
+                ***************************** */
+                //module.exports = imageToFirestore;
             });
         }
 
@@ -192,4 +206,8 @@ export default {
     }
   }
 };
+
+
+
+
 </script>
